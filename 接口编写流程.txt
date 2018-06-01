@@ -1,0 +1,19 @@
+1. DO-右边连接数据库（选中表右击）-scripted extensions-generate POJOS就行-然后修改文件名为studentDO-修改package-完成。
+1. Dao（里面将要访问的id设定好）
+2. XML-mybatis底下新建-studentMapper.xml
+3. Service
+4. Impl
+5. Controller
+
+url: jdbc:mysql://192.168.0.105:3306/datahome_v2.4_display?useUnicode=true&characterEncoding=utf8
+    #url: jdbc:mysql://210.12.56.69:3306/datahome_v2.4_display?useUnicode=true&characterEncoding=utf8
+    username: zhjydb
+    password: zhjydb_20160219
+
+注意：
+①要在com.example.demo.DemoApplication启动文件时添加
+@MapperScan("com.example.demo.dao")   路径扫描文件
+②要添加application.yml和application-dev.yml
+特别注意application-dev.yml里面的mybatis的配置，
+以及type的alibaba需要在pom.xml里面添加alibaba的包。
+
