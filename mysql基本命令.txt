@@ -1,0 +1,21 @@
+create database 数据库名 [其他选项];
+例如：
+在创建时通过 character set gbk 将数据库字符编码指定为 gbk。
+create database samp_db character set gbk;
+
+
+select  * from  huiyuhuai;
+/*增加列*/
+alter table  huiyuhuai add column  age varchar(3) not null ;
+alter table  huiyuhuai add column  sex varchar(3) not null ;
+/*更新数据*/
+UPDATE `datadisplay`.`huiyuhuai` SET huiyuhuai.`age`='20'  WHERE (`huiyuhuai`='惠') LIMIT 1;
+UPDATE `datadisplay`.`huiyuhuai` SET huiyuhuai.`sex`='男'  WHERE (`huiyuhuai`='惠') LIMIT 1;
+/*增加数据*/
+insert into huiyuhuai values ('惠',20,'男');
+insert into huiyuhuai values ('俞',20,'男');
+insert into huiyuhuai values ('淮',20,'男');
+/*删除行*/
+delete  from huiyuhuai where huiyuhuai.sex='男';
+/*修改已有列的列名*/
+alter table huiyuhuai change  huiyuhuai    name  varchar(30) not null ;

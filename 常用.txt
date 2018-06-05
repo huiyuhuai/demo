@@ -1,0 +1,24 @@
+.是class
+#是id
+
+
+//获取legend(数据源, 行数)
+getLengend
+//获取legend的name
+convertData
+
+
+
+
+
+<link rel="stylesheet" href="css/reset.css" />
+stylesheet文档的外部样式表。
+只有 rel 属性的 "stylesheet" 值得到了所有浏览器的支持。其他值只得到了部分地支持。
+rel 属性指示被链接的文档是一个样式表，
+rel 属性规定当前文档与被链接文档之间的关系。
+<link> 标签定义文档与外部资源的关系。
+<link> 标签最常见的用途是链接样式表。
+
+
+<nav> 标签定义导航链接的部分。
+如果文档中有“前后”按钮，则应该把它放到 <nav> 元素中
