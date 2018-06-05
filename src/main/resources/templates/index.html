@@ -1,10 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>交互</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <script src="js/jquery-2.1.0.js"></script>
 </head>
 <body>
-<h1>惠俞淮</h1>
+<div class='show'>
+    <img src="img/msg.png"></img>
+</div>
+
+<!-- 登陆框 -->
+<div class='content'>
+    <div class='logo'>用户登录</div>
+    <div class='inputBox mt50 ml32'>
+        <input type="text" id="username" autofocus="autofocus"
+               autocomplete="off" maxlength="16" size="16" placeholder="请输入账号/邮箱/手机号">
+    </div>
+    <div class='inputBox mt50 ml32'>
+        <!--autofocus意思是当页面加载input是自动为页面焦点,autocomplete是否开启自动保存-->
+        <input type="password" id="password" autofocus="autofocus"
+                   autocomplete="off" maxlength="16" size="16" placeholder="请输入密码">
+    </div>
+
+    <div class='mt50 ml32'>
+        <button class="login_btn" onclick="login()">登陆</button>
+        <button class="login_zhuce" onclick="register()">注册</button>
+    </div>
+</div>
+
+<script>
+    function isTrue() {
+        var username = $('#username').val();   //通过上面id为username使用val获得对应的value值
+        var password = $('#password').val();   //通过上面id为password使用val获得对应的value值
+        console.log("这是username");
+        console.log(username);
+        if (username == '' || password == ''){
+            return false;
+        }
+        return true;
+    }
+    function login() {
+        if (isTrue()) {
+            var username = $('#username').val();   //通过上面id为username使用val获得对应的value值
+            var password = $('#password').val();   //通过上面id为password使用val获得对应的value值
+            $.ajax({
+                type : "get",//请求方式
+                url : "http://localhost/loginuser/login",//请求地址
+                data : {
+                    "username" : username,
+                    "password" : password
+                },//传递给controller的json数据
+                success : function(data) { //返回成功执行回调函数。
+                    console.log(data);
+                    if(data[0] != null ){
+                        alert("登陆成功！");
+                        window.location.reload(); //刷新当前页面
+                    }else {
+                        alert("你的账号或密码有误！");
+                        window.location.reload(); //刷新当前页面
+                    }
+                }
+            });
+        } else {
+            alert("用户名和密码不能为空！");
+        }
+    }
+
+    function register(){
+        if (isTrue()){
+            var username = $('#username').val();   //通过上面id为username使用val获得对应的value值
+            var password = $('#password').val();   //通过上面id为password使用val获得对应的value值
+            console.log("这是username");
+            console.log(username);
+            $.ajax({
+                type : "get",//请求方式
+                url : "http://localhost/loginuser/register",//请求地址
+                data : {
+                    "username" : username,
+                    "password" : password
+                },//传递给controller的json数据
+                success : function(data) { //返回成功执行回调函数。
+                    console.log(data);
+                    alert("注册成功！请牢记您的以下信息:\n" + "用户名为：" + username + "\n" +"密 码 为：" + password);
+                    window.location.reload(); //刷新当前页面
+                },
+                error : function() {//如果出错了，将事件重新绑定
+                    alert("您输入用户名已被注册！");
+                    window.location.reload(); //刷新当前页面
+                }
+            });
+        } else {
+            alert("用户名和密码不能为空！");
+        }
+    }
+
+</script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.footer {
+	background: #1e6bad;;
+	color: #fff ;
+	text-align: center ;
+	height: 50px ;
+	line-height:50px;
+	font-family: 微软雅黑;
+}
