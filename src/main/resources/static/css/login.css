@@ -69,6 +69,11 @@ body {
 	 background: #3499da;
 }
 
+.content .login_zhuce:hover {
+    background: #3499da;
+}
+
+
 /*展示信息*/
 .show {
 	width:600px;

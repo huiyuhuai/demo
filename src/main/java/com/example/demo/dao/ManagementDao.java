@@ -1,7 +1,8 @@
 package com.example.demo.dao;
 
-import com.example.demo.domain.TimeRecordDO;
+import com.example.demo.domain.FeedbackDO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,12 +24,11 @@ import java.util.List;
 // 同时它还能将所标注的类中抛出的数据访问异常封装为 Spring 的数据访问异常类型。 Spring
 // 本身提供了一个丰富的并且是与具体的数据访问技术无关的数据访问异常结构，用于封装不同的
 // 持久层框架抛出的异常，使得异常独立于底层的框架。
-public interface TimeRecordDao {
+public interface ManagementDao {
     /**
+     * 登陆按钮
      * @return
      */
-   List<TimeRecordDO>time();
-
-
+    List<FeedbackDO>commit(@Param("name") String name, @Param("email") String email, @Param("provinces") String provinces, @Param("sex") String sex, @Param("problem") String problem);
 
 }

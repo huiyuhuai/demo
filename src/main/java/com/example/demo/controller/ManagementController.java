@@ -1,14 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.InformationDO;
-import com.example.demo.domain.StudentDO;
-import com.example.demo.domain.TimeRecordDO;
-import com.example.demo.services.InformationService;
-import com.example.demo.services.TimeRecordService;
+import com.example.demo.domain.FeedbackDO;
+import com.example.demo.services.ManagementService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,27 +27,39 @@ import java.util.List;
 @Controller
 //是一个用来处理请求地址映射的注解，可用于类或方法上。
 // 用于类上，表示类中的所有响应请求的方法都是以该地址作为——“父路径”。
-@RequestMapping("TimeRecord")
-public class TimeRecordController {
+@RequestMapping("management")
+public class ManagementController {
 
     //final声明的只能读取不能继承或修改的其他的
-    private final TimeRecordService timeRecordService;
+    private final ManagementService managementService;
 
-    public TimeRecordController(TimeRecordService timeRecordService) {
-        this.timeRecordService = timeRecordService;
+    public ManagementController(ManagementService managementService) {
+        this.managementService = managementService;
     }
 
     /**
-     * time表
+     * loginuser表
      * @return
      */
-    @GetMapping("time")
+        //get方法
+    @GetMapping("commit")
     @ResponseBody
     //@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用；
     // 在使用 @RequestMapping 后，返回值通常解析为跳转路径，加上 @Responsebody 后返回结果不会被解析为跳转路径，而
     // 是直接写入HTTP 响应正文中。例如，异步获取 json 数据，加上 @Responsebody 注解后，就会直接返回 json 数据。
     //@RequestBody 注解则是将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。
-    public List<TimeRecordDO> time() {
-        return timeRecordService.time();
+    //登陆按钮
+
+
+//    post方法
+//    @PostMapping("commit")
+//    @ResponseBody
+//    public List<FeedbackDO> commit(@RequestBody String name,@RequestBody String email,@RequestBody String provinces,@RequestBody String sex,@RequestBody String problem){
+//        return managementService.commit(name,email,provinces,sex,problem);
+//    }
+//
+    public List<FeedbackDO> commit(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("provinces") String provinces,@RequestParam("sex") String sex, @RequestParam("problem") String problem) {
+        return managementService.commit(name,email,provinces,sex,problem);
     }
+
 }
