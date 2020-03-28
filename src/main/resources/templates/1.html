@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" CONTENT="text/html" charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<title>表单</title>
+<script>
+    function isTrue() {
+        var name = $('.user').val();   //通过上面id为username使用val获得对应的value值
+        var password = $('.passwd').val();   //通过上面id为password使用val获得对应的value值
+        if (name == '' || password == ''){
+            return false;
+        }
+        return true;
+    }
+    function isSame() {
+        var password = $('.passwd').val();
+        var password_1 = $('.passwd_1').val();
+        if (password != password_1){
+            return false;
+        }
+        return true;
+    }
+    function getInformation() {
+        if (isTrue()) {
+            if (isSame()) {
+                var name = $('.user').val();
+                var password = $('.passwd').val();
+                var file = $('#file').val();
+                var sex = $('input[name=gender]:checked').val();
+                var hobby = [];
+                // jQuery.each() 函数用于遍历指定的对象和数组。
+                //遍历前面的name为hobby的checked，符合的执行function函数，function函数的中将得到的值push给hobby数组。
+                $('input[name=hobby]:checked').each(function () {
+                    hobby.push($(this).val());
+                });
+                alert("注册成功！请牢记您的以下信息:\n" + "用户名为：" + name + "\n" + "密 码 为：" + password + "\n" + "文 件 为：" + file + "\n" + "性 别 为：" + sex + "\n" + "爱 好 为：" + hobby);
+                window.location.reload(); //刷新当前页面
+            }else {
+                alert("您密码不一致！");
+            }
+        }else {
+            alert("您用户名和密码不能为空！");
+        }
+    }
+    function reload() {
+        window.location.reload(); //刷新当前页面
+    }
+</script>
+<body>
+<div style="text-align: center">
+    <table border="1" width="80%" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td colspan="2">
+                请输入用户信息
+            </td>
+        </tr>
+        <tr>
+            <td width="30%">用户名：</td>
+            <td width="70%"><input class="user" type="text" name="username"/>
+
+            </td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input class="passwd" type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input class="passwd_1" type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td>请上传你的文件：</td>
+            <td><input type="file" name="pic" id="file"/></td>
+        </tr>
+        <tr id="sex">
+            <td>性别：</td>
+            <td><input type="radio" value="女" name="gender">女
+                <input type="radio" value="男" name="gender" checked>男
+            </td>
+        </tr>
+        <tr>
+            <td>兴趣爱好：</td>
+            <td><input type="checkbox" name="hobby" value="阅读" checked/>阅读
+                <input type="checkbox" name="hobby" value="听音乐"/>听音乐
+                <input type="checkbox" name="hobby" value="旅游"/>旅游
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="提交" onclick="getInformation()">
+                <input type="reset" value="重置" onclick="reload()">
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

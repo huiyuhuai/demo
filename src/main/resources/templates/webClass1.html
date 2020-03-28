@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<script src="js/jquery-2.1.0.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>webClass1</title>
+
+    <style>
+        #text1_1 {
+            /*div内文字居中显示*/
+            margin: 0 auto;
+            width: 990px;
+            height: 200px;
+            /*div内文字首行缩进两字符*/
+            text-indent: 2em;
+        }
+
+        #text2 {
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+        }
+
+        #text4 {
+            margin: 0 auto;
+            width: 400px;
+            height: 200px;
+        }
+
+        #navigation_1 li {
+            /*1、navigation_1的div标签首先none没有格式，也就是没有点
+              2、然后让navigation_1中的li标签左浮动横向
+              3、每一个人li标签长度
+              */
+            list-style: none;
+            float: left;
+            width: 200px;
+            background: #CCC;
+            margin-left: 3px;
+            line-height: 30px;
+            text-align: center
+        }
+
+        #navigation {
+            margin: 0 auto;
+            width: 900px;
+            height: 50px;
+        }
+
+        /*#a6{*/
+        /*width:0px ;*/
+        /*height:0px ;*/
+        /*overflow:hidden;*/
+        /*}*/
+    </style>
+    <!--点击页面删除div中的内容-->
+    <script>
+        function toggleOther1() {
+            $("#dianji1").click(function () {
+                $("#text1").toggle();
+            });
+            document.getElementsByTagName("div")[1].setAttribute("style", "display: none");
+        }
+
+        function toggleOther2() {
+            $("#dianji2").click(function () {
+                $("#text2").toggle();
+            });
+            document.getElementsByTagName("div")[3].setAttribute("style", "");
+        }
+
+        function toggleOther3() {
+            $("#dianji3").click(function () {
+                $("#text3").toggle();
+            });
+            document.getElementsByTagName("div")[4].setAttribute("style", "0");
+        }
+
+        function toggleOther4() {
+            $("#dianji4").click(function () {
+                $("#text4").toggle();
+            });
+            document.getElementsByTagName("div")[5].setAttribute("style", "0");
+        }
+
+        function changeType() {
+            document.getElementsByTagName("div")[4].setAttribute("style", "0");
+            // document.getElementsByTagName("div")[3].removeAttribute("style");
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="navigation">
+    <ul id="navigation_1">
+        <li id="dianji1" onclick="toggleOther1()">文字段落标记</li>
+        <li id="dianji2" onclick="toggleOther2()">列表标记应用</li>
+        <li id="dianji3" onclick="toggleOther3()">表格标记应用</li>
+        <li id="dianji4" onclick="toggleOther4()">表单标记应用</li>
+    </ul>
+</div>
+
+<br/>
+<div id="text1" style="display: inline">
+    <a href="http://www.baidu.com">
+        <h2 style="text-align: center ;color: #006600">
+            <u>纪念马克思诞辰200周年大会在京举行习近平发表重要讲话</u>
+        </h2>
+    </a>
+    <p style="text-align: center ;color: #999">2018-05-04 11:47:57</p>
+    <div id="text1_1">
+        <p style="font-size: 14px;font-family: 微软雅黑 ;color:#333 "/>
+        新华社北京5月4日电（记者张晓松、黄小希）纪念马克思诞辰200周年大会4日上午在北京人民大会堂隆重举行。中共中央总书记、国家
+        主席、中央军委主席习近平在会上发表重要讲话强调，我们纪念马克思，是为了向人类历史上最伟大的思想家致敬，也是为了宣示我们对马
+        克思主义科学真理的坚定信念。马克思主义始终是我们党和国家的指导思想，是我们认识世界、把握规律、追求真理、改造世界的强大思想武
+        器。新时代、中国共产党任任要学习马克思，学习和实践马克思主义，高扬马克思主义伟大旗帜，不断从中汲取科学智慧的理论力量，更
+        有定力、更有自信、更有智慧地坚持和发展新时代中国特色社会主义类社会美好前景不断在中国大地上生动展现出来。
+        </p>
+        <p style="font-size: 14px;font-family: 微软雅黑 ;color:#333 "/>
+        人民大会堂大礼堂气氛庄重热烈。主席台上悬挂着“纪念马克思诞辰200周年”会标，后幕正中是马克思画像和“1818-2018”字
+        标，10面红旗分列两侧。大礼堂二层跳台悬挂标语：紧密团结在习近平同志为核心的党中央周围，坚持和发展马克思主义，夺取新时代中
+        国特色社会主义伟大胜利！
+        </p>
+    </div>
+</div>
+
+<div id="text2" style="display: none">
+
+    <ol>
+        <li><img
+                src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1569122555&di=b653f688bbc7884848ed6b35cf410edf&src=http://pic.90sjimg.com/design/00/43/54/50/56476535d3505.jpg"
+                height="90" width="90">起风了 MV
+        </li>
+        <li><img
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569132620148&di=9d653fbeacb44fdbd9f70a526c2e70aa&imgtype=0&src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2Fac%2F6a%2F63%2Fac6a633fb93a1fd58c49b8d777b7c06e.jpg"
+                height="90" width="90">体面 MV
+        </li>
+        <li><img
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569132620147&di=f21029232cd27e26cb70b0025fb38d36&imgtype=0&src=http%3A%2F%2Fs9.knowsky.com%2Fbizhi%2Fl%2F20090808%2F200909181%2520%252810%2529.jpg"
+                height="90" width="90">BINGBIAN(女生版) MV
+        </li>
+        <li><img
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569132620147&di=a8b58e18fd5b03814a7da122024acf28&imgtype=0&src=http%3A%2F%2Fimg8.9158.com%2F200901%2F07%2F01%2F59%2F200901077331129.jpg"
+                height="90" width="90">不仅仅是喜欢 MV
+        </li>
+        <li><img
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569132620147&di=f00bdd57a80d8075ef9d1de6ff9f945d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201504%2F20%2F20150420195413_FCZQa.jpeg"
+                height="90" width="90">最美的期待 MV
+        </li>
+    </ol>
+
+</div>
+
+<div id="text3" style="display: none">
+    <center>
+        <h4>课程表</h4>
+        <table border="1" width="600px" cellpadding="0" cellspacing="0" style="text-align: center">
+            <tr>
+                <td></td>
+                <td>周一</td>
+                <td>周二</td>
+                <td>周三</td>
+                <td>周四</td>
+                <td>周五</td>
+            </tr>
+            <tr>
+                <td>第1-2节</td>
+                <td>数学</td>
+                <td>语文</td>
+                <td>英语</td>
+                <td>数学</td>
+                <td>语文</td>
+            </tr>
+            <tr>
+                <td>第3-4节</td>
+                <td>组装</td>
+                <td>数学</td>
+                <td>体育</td>
+                <td>语文</td>
+                <td>政治</td>
+            </tr>
+            <tr>
+                <td>第5-6节</td>
+                <td>英语</td>
+                <td>任选课</td>
+                <td>组装</td>
+                <td>任选课</td>
+                <td>Fireworks</td>
+            </tr>
+        </table>
+    </center>
+</div>
+
+<div id="text4" style="display: none">
+    <form action=" ">
+        用户名：<input type="text" name="username" value="用户名"><br>
+        密&nbsp;&nbsp;&nbsp;码：<input type="password" name="passwd" value=""><br>
+        所在省份：<select name="province">
+        <option value="1">陕西</option>
+        <option value="2">上海</option>
+        <option value="3">北京</option>
+        <option value="4">深圳</option>
+        <option value="0">广州</option>
+    </select><br>
+        兴趣爱好：
+        <input type="checkbox" name="Bike">看书
+        <input type="checkbox" name="Car">音乐
+        <input type="checkbox" name="Car">旅游
+        <br>
+        个人介绍：
+        <textarea rows="10" cols="30">
+        介绍一下自己
+        </textarea><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="重置">
+
+    </form>
+</div>
+</body>
+</html>
