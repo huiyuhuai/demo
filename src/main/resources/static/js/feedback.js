@@ -33,7 +33,7 @@ function finish(){
     var email = $('.email').val();   //通过上面id为password使用val获得对应的value值
     var problem = $('.message').val();   //通过上面id为password使用val获得对应的value值
     var provinces = $('.provinces').val();   //通过上面id为password使用val获得对应的value值
-    if (name != '' || email != '' || provinces != '' || problem != '' && sex == '性格'){
+    if (name != '' || email != '' || provinces != '' || problem != '' ){
         return false;
     }
     return true;
@@ -42,7 +42,7 @@ function finish(){
 
 function commit() {
     if (isTrue()) {
-        if (boyORgirl()) {
+        // if (boyORgirl()) {
             if(advice()){
                 if (finish()){
 
@@ -62,37 +62,41 @@ function commit() {
                 "problem"  : problem
             },//传递给controller的json数据
             success : function(data) { //返回成功执行回调函数。
+                console.log(data);
             }
+
         });
-                }else {
-                    // layer.msg('请选择您的性别！', {
-                    //     // offset : '35%',
-                    //     time : 5000            //两秒
-                    // });
-                    // function gengxing() {
-                        $("#tijiao").attr("onclick","return false");
-                    alert("请选择正确的性别！！！");
+                    console.log(data); }
+                // else {
+                //     // layer.msg('请选择您的性别！', {
+                //     //     // offset : '35%',
+                //     //     time : 5000            //两秒
+                //     // });
+                //     // function gengxing() {
+                //         $("#tijiao").attr("onclick","return false");
+                //     alert("请选择正确的性别！！！");
+                //
+                //     // window.location.reload(); //刷新当前页面
+                //     // }
+                //     // setTimeout(gengxing,5000);
+                // }
 
-                    // window.location.reload(); //刷新当前页面
-                    // }
-                    // setTimeout(gengxing,5000);
-                }
-
-            }else {}
-        }else {
-            // debugger;
-                layer.msg('请选择您的性别！', {
-                    // offset : '35%',
-                    time : 5000            //两秒
-                });
-            // function gengxing() {
-            //     window.location.reload(); //刷新当前页面
-            // }
-            // setTimeout(gengxing,5000);
-
-            // alert("请选择正确的性别！！！");
-            // debugger;
-                // $("#tijiao").attr("onclick","return false");
-        }
+            }
+        // }
+        // else {
+        //     // debugger;
+        //         layer.msg('请选择您的性别！', {
+        //             // offset : '35%',
+        //             time : 5000            //两秒
+        //         });
+        //     // function gengxing() {
+        //     //     window.location.reload(); //刷新当前页面
+        //     // }
+        //     // setTimeout(gengxing,5000);
+        //
+        //     // alert("请选择正确的性别！！！");
+        //     // debugger;
+        //         // $("#tijiao").attr("onclick","return false");
+        // }
     } else {}
 }

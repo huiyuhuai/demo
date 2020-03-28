@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <script language="JavaScript">
+        //点击按钮往文本框里面显示“数字”
+        var arr_1 = new  Array();
+        var arr_2 = new Array();
+        var arr_3 = new Array();
+        function on_button(num){
+            var arr = new Array(0,1,2,3,4,5,6,7,8,9,".","+","-","*","/");
+            if(num<11){
+                arr_1.push(arr[num]);
+                document.getElementById("input_1").value = arr_1;
+            }else {
+                //清空数组中的逗号
+                // var  a= parseInt(arr_1.join(""));    可以实现
+                // arr_2.push(a);
+                var a="";
+                for(var i=0,j = arr_1.length;i<j;i++){
+                    a = a + arr_1[i];
+                }
+                arr_2.push(parseInt(a));
+                arr_1 = []; //arr_1.length = 0;也可以
+            }
+             // document.getElementById("input_1").value =a+a;
+            if (num=15){
+                var sum = 0;
+                for (var i=0;i<=arr_2.length;i++){
+                    sum = sum + arr_2[i];
+                    arr_3.push(sum);
+
+                }
+                //result = arr_3.pop();
+                console.log("这是arr_3外面    ");
+                console.log(arr_3);
+            }
+        }
+        //清空数组
+        function CE() {
+            arr_1 = [];
+            arr_2 = [];
+        }
+    </script>
+    <style>
+        #calculator{
+            text-align: center;
+        }
+        #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a0,#add,#ce,#cheng,#dian,#chu,#deng{
+            /*border: 10px;*/
+            /*!*border-bottom: 9px;*!*/
+            /*padding: 10px;*/
+        }
+    </style>
+</head>
+<body>
+        <div id="calculator" style="width: 500px;height: 300px;background: #1E9FFF">
+            <form name="myform">
+                <input type="text" name="input_text" id="input_1"> <input type="reset" value="CE" onclick="CE()">
+                <br>
+                <input type="button" id="a1" value="1" onclick="on_button(1)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a2" value="2" onclick="on_button(2)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a3" value="3" onclick="on_button(3)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a10" value="+" onclick="on_button(11)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <input type="button" id="a4" value="4" onclick="on_button(4)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a5" value="5" onclick="on_button(5)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a6" value="6" onclick="on_button(6)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a11" value="-" onclick="on_button(12)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <input type="button" id="a7" value="7" onclick="on_button(7)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a8" value="8" onclick="on_button(8)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a9" value="9" onclick="on_button(9)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a12" value="*" onclick="on_button(13)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <input type="button" id="a0" value="0" onclick="on_button(0)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a13" value="." onclick="on_button(10)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a14" value="/" onclick="on_button(14)">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="a15" value="=" onclick="on_button(15)">&nbsp;&nbsp;&nbsp;&nbsp;
+            </form>
+        </div>
+</body>
+</html>

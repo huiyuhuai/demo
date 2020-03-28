@@ -5,6 +5,7 @@
     <title>首页头部</title>
     <!--导航栏-->
     <link rel="stylesheet" href="bootstrap/bootstrap.daohang.min.css">
+    <link rel="stylesheet" href="css/content.css">
     <script src="js/jquery-2.1.0.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <!--banner轮播bootstrap-->
@@ -12,52 +13,70 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.lunbo.min.css">
     <script src="bootstrap/jquery.lunbo.min.js"></script>
     <script src="bootstrap/bootstrap.lunbo.min.js"></script>
+    <!--点击轮播下一页导航隐藏，点击上一页导航出现-->
+    <script>
+
+        //在文档加载后激活函数：
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#dh").hide();
+            });
+            $("#show").click(function () {
+                $("#dh").show();
+            });
+        });
+    </script>
+
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-light navbar-light navbar-fixed-top">
-    <!-- Links -->
-    <ul class="navbar-nav center-block ">
-        <li>
-            <img src="img/tubiao.png" style=" margin-left:0px;" width="50px" height="70px" title="惠俞淮"></img>
-        </li>
-        <li class="nav-item" font-size: 12px>
-            <a class="nav-link" href="content">首页</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">原创故事</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">资源分享</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">数据分析</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">娱乐天地</a>
-        </li>
+<div id="dh">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light navbar-fixed-top">
+        <!-- Links -->
+        <ul class="navbar-nav center-block ">
+            <li>
+                <!--<img src="img/tubiao.png" style=" margin-left:0px;" width="50px" height="70px" title="惠俞淮"></img>-->
+                <img src="img/moon.png" style=" margin-left:0px;" width="100px" height="70px" title="惠俞淮"></img>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                账户管理
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item text-center" href="#">
-                    <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
-                    ——个人中心
+            </li>
+            <li class="nav-item" font-size: 12px>
+                <a class="nav-link" href="content">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">中秋传说</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">传统中秋</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">现代中秋</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">月圆之夜</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    账户管理
                 </a>
-                <a class="dropdown-item text-center" href="feedback">
-                    <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
-                    ——意见反馈
-                </a>
-                <a class="dropdown-item text-center" href="index">
-                    <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
-                    ——账户注销
-                </a>
-            </div>
-        </li>
-    </ul>
-</nav>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item text-center" href="#">
+                        <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
+                        ——个人中心
+                    </a>
+                    <a class="dropdown-item text-center" href="feedback">
+                        <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
+                        ——意见反馈
+                    </a>
+                    <a class="dropdown-item text-center" href="index">
+                        <img src="img/tubiao.png" style=" margin-left:0px;" width="20px" height="40px"></img>
+                        ——账户注销
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 <!--<div class="header">
     <div class='logo'>原 创</div>
@@ -83,30 +102,115 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="img/banner1.png" alt="First slide">
+            <img src="img/moon1_1.jpg" alt="First slide">
         </div>
         <div class="item">
-            <img src="img/banner2.png" alt="Second slide">
+            <img src="img/moon2_1.jpg" alt="Second slide">
         </div>
         <div class="item">
-            <img src="img/banner3.png" alt="Third slide">
+            <img src="img/moon3_1.jpg" alt="Third slide">
         </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a id="show" class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a id="hide" class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
 </div>
 
-<!--轮播以下内容-->
-<div>
+<div id="fenggexian1">
+    <span>The Mid-Autumn festival legend</span>
+</div>
+<div id="fenggexian">
+    <span>中秋传说</span>
+</div>
+
+<div id="left" style="text-align: center">
+    <h4>我爱中华</h4>
+</div>
+
+<div id="right" style="text-align: center">
+    <h4>我爱中华</h4>
+</div>
+
+
+<hr>
+
+<!--<div class="jumbotron">-->
+<!--<center>-->
+<!--<h1>Hello, world!</h1>-->
+<!--<br>-->
+<!--<p>做你想做，想你所想</p>-->
+<!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+<!--</center>-->
+<!--</div>-->
+
+<div class="foot">
+    <div class="wrap">
+        <ul style="display:none;">
+            <li>首页</li>
+        </ul>
+        <ul style="border-left: 1px solid #97d3f2;background: url(img/moon1_1.jpg)">
+            <!--<li>关于我们</li>-->
+            <h4>关于我们</h4>
+            <li><a href=" " title="关于我们">关于我们</a></li>
+            <li><a href=" " title="关于我们">关于我们</a></li>
+            <li><a href=" " title="关于我们">关于我们</a></li>
+            <li><a href=" " title="关于我们">关于我们</a></li>
+            <li><a href="contact.jsp?urltype=tree.TreeTempUrl&amp;wbtreeid=1012" title="联系我们">联系我们</a></li>
+        </ul>
+        <ul style="background: url(img/moon2_1.jpg)">
+            <!--<li>中秋传说</li>-->
+            <h4>中秋传说</h4>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+            <li><a href=" " title="中秋传说">中秋传说</a></li>
+        </ul>
+        <ul style="background: url(img/moon3_1.jpg)">
+            <!--<li>传统中秋</li>-->
+            <h4>传统中秋</h4>
+            <li><a href=" " title="传统中秋">传统中秋</a></li>
+        </ul>
+        <ul style="background: url(img/moon3_1.jpg)">
+            <!--<li>月亮之美</li>-->
+            <h4>月亮之美</h4>
+            <li><a href=" " title="月亮之美">月亮之美</a></li>
+            <li><a href=" " title="月亮之美">月亮之美</a></li>
+            <li><a href=" " title="月亮之美">月亮之美</a></li>
+            <li><a href=" " title="月亮之美">月亮之美</a></li>
+            <li><a href=" " title="月亮之美">月亮之美</a></li>
+        </ul>
+        <ul style="background: url(img/moon2_1.jpg)">
+            <!--<li>现代中秋</li>-->
+            <h4>现代中秋</h4>
+            <li><a href=" " title="现代中秋">现代中秋</a></li>
+            <li><a href=" " title="现代中秋">现代中秋</a></li>
+            <li><a href=" " title="现代中秋">现代中秋</a></li>
+            <li><a href=" " title="现代中秋">现代中秋</a></li>
+            <li><a href=" " title="现代中秋">现代中秋</a></li>
+        </ul>
+        <ul style="background: url(img/moon1_1.jpg)">
+            <!--<li>月圆之夜</li>-->
+            <h4>月圆之夜</h4>
+            <li><a href=" " title="月圆之夜">月圆之夜</a></li>
+            <li><a href=" " title="月圆之夜">月圆之夜</a></li>
+        </ul>
+    </div>
 
 </div>
 
+<div class="hr">
+    <!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+    <hr>
+    <p>版权所有 © 咸阳师范学院 &nbsp;陕ICP备123456789号 学校地址：陕西省咸阳市渭城区渭阳街道</p>
+</div>
 </body>
 </html>
